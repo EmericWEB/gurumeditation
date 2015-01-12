@@ -121,6 +121,26 @@ function guru_imagesize(){
     add_filter( 'get_image_tag', 'guru_image_tag' );
 }
 
+if(get_option('gurutheme_google_analytics')){
+    
+    add_action('init', 'guru_google_analytics', 15);
+
+    if(! function_exists('guru_google_analytics')) {
+        function guru_google_analytics(){
+        ?>
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','<?php echo get_option('gurutheme_google_analytics'); ?>');ga('send','pageview');
+        </script>
+        <?php
+        }
+    }
+}
+
 function guru_image_classes($class) 
 {
     return "img-responsive";
