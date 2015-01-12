@@ -35,7 +35,6 @@
                             </div>
                         </div>
                     </div>
-			<?php //get_sidebar( 'footer' ); ?>
 		</footer><!-- #colophon -->
 	<?php wp_footer(); ?>
                 
