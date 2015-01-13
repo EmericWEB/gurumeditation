@@ -36,6 +36,9 @@
 <body <?php body_class(); ?>>
     <?php 
     if(is_single()):
+        /**
+         * @todo make an action and a hook
+         */
         ?>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
